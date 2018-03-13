@@ -1,0 +1,5 @@
+name: OrbitalMC
+version: ${project.version}
+main: me.tcpackfrequency.orbitalmc.OrbitalMC
+authors: [TcpAckFrequency]
+description: Core plugin for OrbitalMC featuring all the essentials.
