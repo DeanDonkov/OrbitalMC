@@ -1,4 +1,55 @@
 package me.tcpackfrequency.orbitalmc.database;
 
-public class Database {
+import me.tcpackfrequency.orbitalmc.database.handlers.Handler;
+import me.tcpackfrequency.orbitalmc.database.handlers.MySQLHandler;
+import me.tcpackfrequency.orbitalmc.database.type.MySQL;
+import me.tcpackfrequency.orbitalmc.database.type.Type;
+
+public class Database implements IDatabase {
+
+    private Type currentDatabase;
+    private Handler currentHandler;
+
+    @Override
+    public void setCurrentDatabase(String db) {
+        if(db.equalsIgnoreCase("mysql")) this.currentDatabase = this.getDatabase("mysql");
+    }
+
+    @Override
+    public Type getCurrentDatabase() {
+        if (this.currentDatabase == null) {
+            throw new NullPointerException("The current database is null, set it first before accessing it!");
+        }
+        return this.currentDatabase;
+    }
+
+    @Override
+    public void setCurrentDatabaseHandler() {
+        if(this.getCurrentDatabase().getName().equalsIgnoreCase("MySQL")) {
+            this.currentHandler = this.getDatabaseHandler("MySQL");
+        }
+    }
+
+    @Override
+        public Type getDatabase (String db){
+            if (db.equalsIgnoreCase("mysql")) return new MySQL();
+            return null;
+        }
+
+    @Override
+    public Handler getCurrentDatabaseHandler() {
+        if(this.currentHandler == null) {
+            throw new NullPointerException("The current database handler is null, set it first before accessing it!");
+        }
+        return this.currentHandler;
+    }
+
+    @Override
+    public Handler getDatabaseHandler(String dbHandler) {
+        if(dbHandler.equalsIgnoreCase("mysql")) {
+            return new MySQLHandler();
+        }
+        return null;
+    }
 }
+

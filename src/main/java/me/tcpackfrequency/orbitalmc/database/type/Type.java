@@ -1,7 +1,11 @@
 package me.tcpackfrequency.orbitalmc.database.type;
 
-public interface IType {
+import me.tcpackfrequency.orbitalmc.database.handlers.Handler;
 
+public interface Type {
+
+    Handler getHandler();
+    String getName();
 
 
 }
