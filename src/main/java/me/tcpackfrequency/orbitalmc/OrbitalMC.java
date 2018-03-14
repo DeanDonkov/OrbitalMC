@@ -15,12 +15,17 @@ public final class OrbitalMC extends JavaPlugin {
         this.setupDatabase();
     }
 
+    @Override
+    public void onDisable(){
+        db.getCurrentDatabaseHandler().stopDB();
+    }
+
     private void setupDatabase(){
         this.db = new Database();
         db.setCurrentDatabase("MySQL");
         db.setCurrentDatabaseHandler();
-        db.getCurrentDatabaseHandler().init(this.getConfig().getConfigurationSection("MySQL"));
-        db.getCurrentDatabaseHandler().connect();
+        db.getCurrentDatabaseHandler().connect(this.getConfig().getConfigurationSection("MySQL"));
+        db.getCurrentDatabaseHandler().init();
     }
 
     private void setupManagers(){
