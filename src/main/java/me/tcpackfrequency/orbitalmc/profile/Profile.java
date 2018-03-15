@@ -10,13 +10,14 @@ public class Profile {
 
     private UUID u;
 
+
     private double money;
     private String nickname;
     private String nametag;
 
 
     public double getMoney() {
-        return money;
+        return this.money;
     }
 
     public String getNickname() {
@@ -25,6 +26,10 @@ public class Profile {
 
     public String getNametag() {
         return nametag;
+    }
+
+    public void setMoney(double mony) {
+        this.money = mony;
     }
 
 

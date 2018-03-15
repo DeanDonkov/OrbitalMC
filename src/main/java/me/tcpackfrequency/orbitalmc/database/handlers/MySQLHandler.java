@@ -44,13 +44,6 @@ public class MySQLHandler implements Handler {
         this.Username = cs.getString("Username");
         this.Password = cs.getString("Password");
         this.Port = cs.getInt("Port");
-        //HikariConfig config = new HikariConfig();
-        //config.setDataSourceClassName("com.microsoft.sqlserver.jdbc.SQLServerDataSource");
-        //config.setJdbcUrl("jdbc:mysql//" + this.Host + ":" + this.Port + "/" + this.Database);
-        // config.setDriverClassName("com.mysql.jdbc.Driver");
-        //config.setUsername(this.Username);
-        //config.setPassword(this.Password);
-        //hikari = new HikariDataSource(config);
 
         hikari = new HikariDataSource();
         hikari.setMaximumPoolSize(10);
@@ -80,8 +73,21 @@ public class MySQLHandler implements Handler {
         return hikari.getConnection();
     }
 
+
     @Override
     public void saveStats(UUID u) {
-        // do in a while.
+        PreparedStatement ps;
+        try {
+            ps = hikari.getConnection().prepareStatement("INSERT into Profile(UUID, money) VALUES(?, ?) ON DUPLICATE KEY UPDATE money = ?;");
+            ps.setString(1, String.valueOf(u));
+            ps.setDouble(2, pm.getOrCreateProfile(u).getMoney());
+            ps.setDouble(3, pm.getOrCreateProfile(u).getMoney());
+
+            ps.executeUpdate();
+            System.out.println("Successfully updated profile!");
+        } catch(SQLException e){
+            e.printStackTrace();
+        }
     }
+
 }
