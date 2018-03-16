@@ -15,6 +15,25 @@ public class Profile {
     private String nickname;
     private String nametag;
 
+    private int xp;
+
+    private int level;
+
+    public int getXp() {
+        return xp;
+    }
+
+    public void setXp(int xp) {
+        this.xp = xp;
+    }
+
+    public int getLevel() {
+        return level;
+    }
+
+    public void setLevel(int level) {
+        this.level = level;
+    }
 
     public double getMoney() {
         return this.money;
