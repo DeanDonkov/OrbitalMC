@@ -8,3 +8,7 @@ Redis:
   Host: localhost
   Port: 6379
   Password: TcpIsTheBest
+
+
+Permissions:
+  tcp: tcp.*
