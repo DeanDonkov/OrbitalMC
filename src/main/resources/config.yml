@@ -4,3 +4,7 @@ MySQL:
   Username: sql11226546
   Password: lgJ6MkTZTt
   Port: 3306
+Redis:
+  Host: localhost
+  Port: 6379
+  Password: TcpIsTheBest
