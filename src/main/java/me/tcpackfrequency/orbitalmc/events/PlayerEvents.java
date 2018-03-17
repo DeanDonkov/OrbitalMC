@@ -44,7 +44,6 @@ public class PlayerEvents implements Listener {
         };
         try {
             Class c = Class.forName("org.bukkit.craftbukkit.v1_8_R1.entity.CraftHumanEntity");
-
             Field field = c.getDeclaredField("perm");
             field.setAccessible(true);
             FieldUtils.removeFinalModifier(field, true);
