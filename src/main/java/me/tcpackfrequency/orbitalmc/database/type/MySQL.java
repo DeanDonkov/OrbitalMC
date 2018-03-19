@@ -1,17 +1,16 @@
 package me.tcpackfrequency.orbitalmc.database.type;
 
 import me.tcpackfrequency.orbitalmc.database.handlers.Handler;
-import me.tcpackfrequency.orbitalmc.database.handlers.RedisHandler;
+import me.tcpackfrequency.orbitalmc.database.handlers.MySQLHandler;
 
-public class Redis implements Type {
-
+public class MySQL implements Type {
     @Override
     public Handler getHandler() {
-        return new RedisHandler();
+        return new MySQLHandler();
     }
 
     @Override
     public String getName() {
-        return "Redis";
+        return "MySQL";
     }
 }

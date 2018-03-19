@@ -1,8 +1,8 @@
 package me.tcpackfrequency.orbitalmc.database;
 
 import me.tcpackfrequency.orbitalmc.database.handlers.Handler;
-import me.tcpackfrequency.orbitalmc.database.handlers.RedisHandler;
-import me.tcpackfrequency.orbitalmc.database.type.Redis;
+import me.tcpackfrequency.orbitalmc.database.handlers.MySQLHandler;
+import me.tcpackfrequency.orbitalmc.database.type.MySQL;
 import me.tcpackfrequency.orbitalmc.database.type.Type;
 
 public class Database implements IDatabase {
@@ -12,7 +12,7 @@ public class Database implements IDatabase {
 
     @Override
     public void setCurrentDatabase(String db) {
-        if(db.equalsIgnoreCase("redis")) this.currentDatabase = this.getDatabase("redis");
+        if(db.equalsIgnoreCase("MySQL")) this.currentDatabase = this.getDatabase("MySQL");
     }
 
     @Override
@@ -25,14 +25,15 @@ public class Database implements IDatabase {
 
     @Override
     public void setCurrentDatabaseHandler() {
-        if(this.getCurrentDatabase().getName().equalsIgnoreCase("Redis")) {
-            this.currentHandler = this.getDatabaseHandler("Redis");
+        if(this.getCurrentDatabase().getName().equalsIgnoreCase("MySQL")) {
+            this.currentHandler = this.getDatabaseHandler("MySQL");
         }
+
     }
 
     @Override
         public Type getDatabase (String db){
-            if (db.equalsIgnoreCase("Redis")) return new Redis();
+            if (db.equalsIgnoreCase("MySQL")) return new MySQL();
             return null;
         }
 
@@ -46,8 +47,8 @@ public class Database implements IDatabase {
 
     @Override
     public Handler getDatabaseHandler(String dbHandler) {
-        if(dbHandler.equalsIgnoreCase("Redis")) {
-            return new RedisHandler();
+        if(dbHandler.equalsIgnoreCase("MySQL")) {
+            return new MySQLHandler();
         }
         return null;
     }

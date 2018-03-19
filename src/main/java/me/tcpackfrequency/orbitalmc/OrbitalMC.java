@@ -2,7 +2,6 @@ package me.tcpackfrequency.orbitalmc;
 
 import me.tcpackfrequency.orbitalmc.commands.BalanceCommand;
 import me.tcpackfrequency.orbitalmc.database.Database;
-import me.tcpackfrequency.orbitalmc.database.type.Redis;
 import me.tcpackfrequency.orbitalmc.events.PlayerEvents;
 import me.tcpackfrequency.orbitalmc.managers.FileManager;
 import me.tcpackfrequency.orbitalmc.managers.MoneyManager;
@@ -23,8 +22,6 @@ public final class OrbitalMC extends JavaPlugin {
 
     private ProfileManager pm;
 
-    private Redis redis;
-
     @Override
     public void onEnable() {
         this.setupManagers();
@@ -43,9 +40,9 @@ public final class OrbitalMC extends JavaPlugin {
 
     private void setupDatabase(){
         this.db = new Database();
-        db.setCurrentDatabase("Redis");
+        db.setCurrentDatabase("MySQL");
         db.setCurrentDatabaseHandler();
-        db.getCurrentDatabaseHandler().connect(this.getConfig().getConfigurationSection("Redis"));
+        db.getCurrentDatabaseHandler().connect(this.getConfig().getConfigurationSection("MySQL"));
         db.getCurrentDatabaseHandler().init();
 
     }

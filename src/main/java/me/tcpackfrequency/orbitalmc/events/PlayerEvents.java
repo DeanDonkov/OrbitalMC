@@ -22,7 +22,7 @@ public class PlayerEvents implements Listener {
     }
 
     @EventHandler
-    public void Leave(PlayerQuitEvent e){
+    public void Leave(PlayerQuitEvent e) {
         this.pl.getDb().getCurrentDatabaseHandler().saveStats(e.getPlayer().getUniqueId());
         this.pl.getPm().RemoveProfile(e.getPlayer().getUniqueId());
     }

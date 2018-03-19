@@ -18,11 +18,13 @@ public class CustomPermissible extends PermissibleBase {
 
     public boolean hasPermission(String s){
         // implement later.
+        // ServerOperator is the player!
         return super.hasPermission(s);
     }
 
     public boolean hasPermission(Permission p){
         // implement later.
+        // ServerOperator is the player!
         return super.hasPermission(p);
     }
 }
