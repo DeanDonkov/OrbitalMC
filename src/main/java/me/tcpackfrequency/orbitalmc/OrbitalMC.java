@@ -6,6 +6,7 @@ import me.tcpackfrequency.orbitalmc.events.PlayerEvents;
 import me.tcpackfrequency.orbitalmc.managers.FileManager;
 import me.tcpackfrequency.orbitalmc.managers.MoneyManager;
 import me.tcpackfrequency.orbitalmc.managers.ProfileManager;
+import me.tcpackfrequency.orbitalmc.permissions.Permissions;
 import me.tcpackfrequency.orbitalmc.runnables.LevelRunnable;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.PluginManager;
@@ -22,6 +23,8 @@ public final class OrbitalMC extends JavaPlugin {
 
     private ProfileManager pm;
 
+    private Permissions permissions;
+
     @Override
     public void onEnable() {
         this.setupManagers();
@@ -30,6 +33,8 @@ public final class OrbitalMC extends JavaPlugin {
         pm.registerEvents(new PlayerEvents(this), this);
         this.setupCommands();
         this.setupRunnables();
+
+        this.permissions = new Permissions(this);
 
     }
 
@@ -62,6 +67,10 @@ public final class OrbitalMC extends JavaPlugin {
     private void setupRunnables(){
         this.lr = new LevelRunnable(this);
         lr.runTaskTimer(this, 0, 12000);
+    }
+
+    public Permissions getPermissions() {
+        return permissions;
     }
 
     public Database getDb() {

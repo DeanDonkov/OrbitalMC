@@ -72,7 +72,7 @@ public class MySQLHandler implements Handler {
 
     @Override
     public void saveStats(UUID u) {
-        PreparedStatement ps;
+        PreparedStatement ps = null;
         try {
             ps = hikari.getConnection().prepareStatement("INSERT into Profile(UUID, money) VALUES(?, ?) ON DUPLICATE KEY UPDATE money = ?;");
             ps.setString(1, String.valueOf(u));
@@ -83,6 +83,12 @@ public class MySQLHandler implements Handler {
             System.out.println("Successfully updated profile!");
         } catch(SQLException e){
             e.printStackTrace();
+        } finally {
+            try {
+                this.close(hikari.getConnection(), ps, null);
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
         }
     }
 

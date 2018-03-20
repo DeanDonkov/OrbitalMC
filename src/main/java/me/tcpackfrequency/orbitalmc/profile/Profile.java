@@ -1,14 +1,25 @@
 package me.tcpackfrequency.orbitalmc.profile;
 
+import org.bukkit.Bukkit;
+import org.bukkit.entity.Player;
+import org.bukkit.permissions.PermissionAttachment;
+
+import java.util.HashMap;
+import java.util.Map;
 import java.util.UUID;
 
 public class Profile {
 
+    private UUID u;
+
     public Profile(UUID u){
         this.u = u;
+        this.p = Bukkit.getPlayer(u);
     }
 
-    private UUID u;
+    private Player p;
+
+    private Map<UUID, PermissionAttachment> perms = new HashMap<>();
 
 
     private double money;
@@ -47,10 +58,13 @@ public class Profile {
         return nametag;
     }
 
-    public void setMoney(double mony) {
-        this.money = mony;
+    public void setMoney(double money) {
+        this.money = money;
     }
 
 
+    public Map<UUID, PermissionAttachment> getPerms() {
+        return perms;
+    }
 
 }
