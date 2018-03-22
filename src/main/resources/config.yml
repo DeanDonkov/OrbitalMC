@@ -1,8 +1,18 @@
-Redis:
-  Host: 127.0.0.1:6379
-  Port: 6379
-  Password: TcpIsTheBest
+MySQL:
+  Host: sql11.freemysqlhosting.net
+  Database: sql11226546
+  Username: sql11226546
+  Password: lgJ6MkTZTt
+  Port: 3306
 
 
-Permissions:
-  tcp: tcp.*
+Messages:
+## Valid placeholders {permission}
+  NO-PERMISSION: "&cYou don't have the required permission!"
+## Valid placeholders {level}, {name}
+  CURRENT-LEVEL: "&aYour current level is {level}"
+LevelCommand:
+  AdminIndex:
+    - "&c/Level exp give <player> - gives EXP to player."
+    - "&c/Level exp set <player> - sets the EXP to the player."
+    - "&c/Level exp remove <player> - removes EXP from the player."
