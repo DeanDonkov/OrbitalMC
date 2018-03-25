@@ -5,17 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5da3512c-9131-432c-acae-cc65b18ce4dc" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/me/tcpackfrequency/orbitalmc/commands/PermissionsCommand.java" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/me/tcpackfrequency/orbitalmc/OrbitalMC.java" afterPath="$PROJECT_DIR$/src/main/java/me/tcpackfrequency/orbitalmc/OrbitalMC.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/me/tcpackfrequency/orbitalmc/database/Database.java" afterPath="$PROJECT_DIR$/src/main/java/me/tcpackfrequency/orbitalmc/database/Database.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/me/tcpackfrequency/orbitalmc/database/handlers/Handler.java" afterPath="$PROJECT_DIR$/src/main/java/me/tcpackfrequency/orbitalmc/database/handlers/Handler.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/me/tcpackfrequency/orbitalmc/database/handlers/MySQLHandler.java" afterPath="$PROJECT_DIR$/src/main/java/me/tcpackfrequency/orbitalmc/database/handlers/MySQLHandler.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/me/tcpackfrequency/orbitalmc/database/type/MySQL.java" afterPath="$PROJECT_DIR$/src/main/java/me/tcpackfrequency/orbitalmc/database/type/MySQL.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/me/tcpackfrequency/orbitalmc/events/PlayerEvents.java" afterPath="$PROJECT_DIR$/src/main/java/me/tcpackfrequency/orbitalmc/events/PlayerEvents.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/me/tcpackfrequency/orbitalmc/permissions/Permissions.java" afterPath="$PROJECT_DIR$/src/main/java/me/tcpackfrequency/orbitalmc/permissions/Permissions.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/config.yml" afterPath="$PROJECT_DIR$/src/main/resources/config.yml" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/plugin.yml" afterPath="$PROJECT_DIR$/src/main/resources/plugin.yml" />
     </list>
     <list id="ea1b8641-a6b6-41be-a66e-cdd28210583c" name="Added CRUD operations to Permissions" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
@@ -557,7 +547,8 @@
     <MESSAGE value="Decided to switch only to Redis as persistent storage, because MySQL isnt worth it for such plugin. Redis would be enough." />
     <MESSAGE value="Reverted back to MySQL *sigh*." />
     <MESSAGE value="Added a Level command, and began working on config." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added a Level command, and began working on config." />
+    <MESSAGE value="Hella buggy, DO NOT USE THIS on a server. Especially this commit. EXPERIMENTAL COMMIT! Will fix everything tomorrow! A lot of design problems! Tomorrow fix!" />
+    <option name="LAST_COMMIT_MESSAGE" value="Hella buggy, DO NOT USE THIS on a server. Especially this commit. EXPERIMENTAL COMMIT! Will fix everything tomorrow! A lot of design problems! Tomorrow fix!" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
