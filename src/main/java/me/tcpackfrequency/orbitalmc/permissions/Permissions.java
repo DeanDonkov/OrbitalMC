@@ -6,6 +6,7 @@ import org.bukkit.permissions.PermissionAttachment;
 
 import java.util.List;
 import java.util.Map;
+import java.util.UUID;
 import java.util.stream.Collectors;
 
 public class Permissions {
@@ -41,6 +42,10 @@ public class Permissions {
                 .collect(Collectors.toList());
     }
 
+    public String[] getPerms(UUID u) {
+        String Perms = pl.getDb().getCurrentDatabaseHandler().getPermissions(u);
+        return Perms.split("\\|");
+    }
 
 
 }

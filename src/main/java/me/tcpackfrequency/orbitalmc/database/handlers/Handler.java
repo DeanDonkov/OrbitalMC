@@ -10,4 +10,6 @@ public interface Handler {
     void connect(ConfigurationSection cs);
     void saveStats(UUID u);
     void stopDB();
+    void setPermisions(String[] permission, UUID u);
+    String getPermissions(UUID u);
 }

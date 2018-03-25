@@ -5,3 +5,6 @@ authors: [TcpAckFrequency]
 description: Core plugin for OrbitalMC featuring all the essentials.
 commands:
   Balance:
+  Permissions:
+    aliases: [perms, perm]
+  Level:

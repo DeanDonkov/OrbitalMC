@@ -2,6 +2,7 @@ package me.tcpackfrequency.orbitalmc;
 
 import me.tcpackfrequency.orbitalmc.commands.BalanceCommand;
 import me.tcpackfrequency.orbitalmc.commands.LevelCommand;
+import me.tcpackfrequency.orbitalmc.commands.PermissionsCommand;
 import me.tcpackfrequency.orbitalmc.database.Database;
 import me.tcpackfrequency.orbitalmc.events.PlayerEvents;
 import me.tcpackfrequency.orbitalmc.managers.FileManager;
@@ -45,7 +46,7 @@ public final class OrbitalMC extends JavaPlugin {
     }
 
     private void setupDatabase(){
-        this.db = new Database();
+        this.db = new Database(this);
         db.setCurrentDatabase("MySQL");
         db.setCurrentDatabaseHandler();
         db.getCurrentDatabaseHandler().connect(this.getConfig().getConfigurationSection("MySQL"));
@@ -63,6 +64,7 @@ public final class OrbitalMC extends JavaPlugin {
     private void setupCommands(){
         getCommand("Balance").setExecutor(new BalanceCommand(this));
         getCommand("Level").setExecutor(new LevelCommand(this));
+        getCommand("Permissions").setExecutor(new PermissionsCommand(this));
     }
 
 
