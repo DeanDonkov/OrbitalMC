@@ -6,13 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="5da3512c-9131-432c-acae-cc65b18ce4dc" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/me/tcpackfrequency/orbitalmc/OrbitalMC.java" afterPath="$PROJECT_DIR$/src/main/java/me/tcpackfrequency/orbitalmc/OrbitalMC.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/me/tcpackfrequency/orbitalmc/commands/PermissionsCommand.java" afterPath="$PROJECT_DIR$/src/main/java/me/tcpackfrequency/orbitalmc/commands/PermissionsCommand.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/me/tcpackfrequency/orbitalmc/database/Database.java" afterPath="$PROJECT_DIR$/src/main/java/me/tcpackfrequency/orbitalmc/database/Database.java" />
       <change beforePath="$PROJECT_DIR$/src/main/java/me/tcpackfrequency/orbitalmc/database/handlers/MySQLHandler.java" afterPath="$PROJECT_DIR$/src/main/java/me/tcpackfrequency/orbitalmc/database/handlers/MySQLHandler.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/me/tcpackfrequency/orbitalmc/database/type/MySQL.java" afterPath="$PROJECT_DIR$/src/main/java/me/tcpackfrequency/orbitalmc/database/type/MySQL.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/me/tcpackfrequency/orbitalmc/events/PlayerEvents.java" afterPath="$PROJECT_DIR$/src/main/java/me/tcpackfrequency/orbitalmc/events/PlayerEvents.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/me/tcpackfrequency/orbitalmc/profile/Profile.java" afterPath="$PROJECT_DIR$/src/main/java/me/tcpackfrequency/orbitalmc/profile/Profile.java" />
     </list>
     <list id="ea1b8641-a6b6-41be-a66e-cdd28210583c" name="Added CRUD operations to Permissions" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
@@ -42,8 +36,8 @@
       <file leaf-file-name="MySQLHandler.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/me/tcpackfrequency/orbitalmc/database/handlers/MySQLHandler.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="464">
-              <caret line="137" column="54" lean-forward="false" selection-start-line="137" selection-start-column="54" selection-end-line="137" selection-end-column="54" />
+            <state relative-caret-position="204">
+              <caret line="103" column="30" lean-forward="false" selection-start-line="103" selection-start-column="30" selection-end-line="103" selection-end-column="30" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -552,7 +546,8 @@
     <MESSAGE value="Reverted back to MySQL *sigh*." />
     <MESSAGE value="Added a Level command, and began working on config." />
     <MESSAGE value="Hella buggy, DO NOT USE THIS on a server. Especially this commit. EXPERIMENTAL COMMIT! Will fix everything tomorrow! A lot of design problems! Tomorrow fix!" />
-    <option name="LAST_COMMIT_MESSAGE" value="Hella buggy, DO NOT USE THIS on a server. Especially this commit. EXPERIMENTAL COMMIT! Will fix everything tomorrow! A lot of design problems! Tomorrow fix!" />
+    <MESSAGE value="Ight fixed up permissions a bit still buggy" />
+    <option name="LAST_COMMIT_MESSAGE" value="Ight fixed up permissions a bit still buggy" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -866,8 +861,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/me/tcpackfrequency/orbitalmc/database/handlers/MySQLHandler.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="464">
-          <caret line="137" column="54" lean-forward="false" selection-start-line="137" selection-start-column="54" selection-end-line="137" selection-end-column="54" />
+        <state relative-caret-position="204">
+          <caret line="103" column="30" lean-forward="false" selection-start-line="103" selection-start-column="30" selection-end-line="103" selection-end-column="30" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

@@ -9,6 +9,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.HashSet;
 import java.util.UUID;
 
 
@@ -100,6 +101,7 @@ public class MySQLHandler implements Handler {
         }
     }
 
+    // TODO: MAKE IT USE SETS.
     @Override
     public void setPermisions(String[] permissions, UUID u) {
             StringBuilder perm = new StringBuilder();
@@ -132,10 +134,9 @@ public class MySQLHandler implements Handler {
                 ps.setString(1, String.valueOf(u));
                 rs = ps.executeQuery();
 
+                HashSet<String> permissions = new HashSet<>();
                 while(rs.next()) {
-                    String permission = rs.getString("permissions");
-                    // REWORK THIS!!!!! CRUCIAL!!
-                    // TODO: REWORK THIS!!! CRUCIAL!!!
+                    permissions.add(rs.getString("permissions"));
                 }
                 return null;
             } catch (SQLException e){
