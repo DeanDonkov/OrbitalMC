@@ -22,7 +22,6 @@ public class PlayerEvents implements Listener {
 
     @EventHandler
     public void Join(PlayerJoinEvent e) {
-        pl.getPermissions().addPermission("yooo", e.getPlayer());
-        pl.getDb().getCurrentDatabaseHandler().setPermisions(new String[] {"hi"}, e.getPlayer().getUniqueId());
+        pl.getPermissions().Attach(pl, e.getPlayer()).addPermission("yooo", e.getPlayer());
     }
 }

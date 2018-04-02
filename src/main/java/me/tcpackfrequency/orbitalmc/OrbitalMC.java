@@ -46,7 +46,7 @@ public final class OrbitalMC extends JavaPlugin {
     }
 
     private void setupDatabase(){
-        this.db = new Database(this);
+        this.db = new Database();
         db.setCurrentDatabase("MySQL");
         db.setCurrentDatabaseHandler();
         db.getCurrentDatabaseHandler().connect(this.getConfig().getConfigurationSection("MySQL"));

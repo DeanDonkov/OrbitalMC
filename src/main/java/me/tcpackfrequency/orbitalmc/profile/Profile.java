@@ -1,7 +1,5 @@
 package me.tcpackfrequency.orbitalmc.profile;
 
-import org.bukkit.Bukkit;
-import org.bukkit.entity.Player;
 import org.bukkit.permissions.PermissionAttachment;
 
 import java.util.HashMap;
@@ -14,10 +12,8 @@ public class Profile {
 
     public Profile(UUID u){
         this.u = u;
-        this.p = Bukkit.getPlayer(u);
+        //this.p = Bukkit.getPlayer(u);
     }
-
-    private Player p;
 
     private Map<UUID, PermissionAttachment> perms = new HashMap<>();
 
@@ -66,5 +62,7 @@ public class Profile {
     public Map<UUID, PermissionAttachment> getPerms() {
         return perms;
     }
+
+
 
 }

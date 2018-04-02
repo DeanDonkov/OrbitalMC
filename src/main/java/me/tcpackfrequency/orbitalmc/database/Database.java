@@ -1,6 +1,5 @@
 package me.tcpackfrequency.orbitalmc.database;
 
-import me.tcpackfrequency.orbitalmc.OrbitalMC;
 import me.tcpackfrequency.orbitalmc.database.handlers.Handler;
 import me.tcpackfrequency.orbitalmc.database.handlers.MySQLHandler;
 import me.tcpackfrequency.orbitalmc.database.type.MySQL;
@@ -10,12 +9,6 @@ public class Database implements IDatabase {
 
     private Type currentDatabase;
     private Handler currentHandler;
-
-    private OrbitalMC pl;
-
-    public Database(OrbitalMC pl){
-        this.pl = pl;
-    }
 
     @Override
     public void setCurrentDatabase(String db) {
@@ -40,7 +33,7 @@ public class Database implements IDatabase {
 
     @Override
         public Type getDatabase (String db){
-            if (db.equalsIgnoreCase("MySQL")) return new MySQL(pl);
+            if (db.equalsIgnoreCase("MySQL")) return new MySQL();
             return null;
         }
 
@@ -55,7 +48,7 @@ public class Database implements IDatabase {
     @Override
     public Handler getDatabaseHandler(String dbHandler) {
         if(dbHandler.equalsIgnoreCase("MySQL")) {
-            return new MySQLHandler(pl);
+            return new MySQLHandler();
         }
         return null;
     }

@@ -25,7 +25,7 @@ public class PermissionsCommand extends CommandBase<OrbitalMC> {
             return true;
         }
         Player p = (Player) sender;
-        // FOR TESTING.
+
         if(args.length == 0) {
             p.sendMessage("Your permissions are:");
             for(String s : pl.getPermissions().getPerms(p.getUniqueId())) {
