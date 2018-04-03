@@ -25,6 +25,7 @@ public class Permissions {
     }
 
     public Permissions addPermission(String permission, Player p){
+        pl.getDb().getCurrentDatabaseHandler().addPermission(permission, p.getUniqueId());
         PermissionAttachment perms = pl.getPm().getOrCreateProfile(p.getUniqueId()).getPerms().get(p.getUniqueId());
         perms.setPermission(permission, true);
         return this;

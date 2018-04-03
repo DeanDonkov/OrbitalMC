@@ -30,7 +30,7 @@ public class MySQLHandler implements Handler {
                 this.connection = hikari.getConnection();
                 ps = connection.prepareStatement("CREATE TABLE IF NOT EXISTS Profile(UUID varchar(36), money FLOAT)");
 
-                ps = connection.prepareStatement("CREATE TABLE IF NOT EXISTS Permissions(`UUID` varchar(36) UNIQUE NOT NULL, FOREIGN KEY(`UUID`) REFERENCES Profile(`UUID`), permissions varchar(100))");
+                ps = connection.prepareStatement("CREATE TABLE IF NOT EXISTS Permissions(`UUID` varchar(36) NOT NULL, FOREIGN KEY(`UUID`) REFERENCES Profile(`UUID`), permissions varchar(100))");
                 ps.executeUpdate();
 
             } catch(SQLException ex){
@@ -76,10 +76,6 @@ public class MySQLHandler implements Handler {
                 ps.setString(1, String.valueOf(u));
                 ps.setDouble(2, pm.getOrCreateProfile(u).getMoney());
                 ps.setDouble(3, pm.getOrCreateProfile(u).getMoney());
-                ps = hikari.getConnection().prepareStatement("INSERT INTO Permissions(`UUID`, permissions) VALUES(?, ?)");
-                ps.setString(1, String.valueOf(u));
-                ps.setString(2, pm.getOrCreateProfile(u).getPerms().get(u).toString());
-
                 ps.executeUpdate();
                 System.out.println("Successfully updated profile!");
             } catch(SQLException e){
@@ -149,6 +145,7 @@ public class MySQLHandler implements Handler {
     public void addPermission(HashSet<String> permissions, UUID u) {
         PreparedStatement ps = null;
         try {
+            // TODO: MAKE IT USE BATCHING.
             ps = hikari.getConnection().prepareStatement("INSERT into Permissions(`UUID`, permissions) VALUES(?,?)");
             ps.setString(1, String.valueOf(u));
             ps.setString(2, permissions.toString());

@@ -4,7 +4,6 @@ import me.tcpackfrequency.orbitalmc.OrbitalMC;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
-import org.bukkit.permissions.PermissionAttachment;
 
 public class PermissionsCommand extends CommandBase<OrbitalMC> {
     /**
@@ -29,9 +28,7 @@ public class PermissionsCommand extends CommandBase<OrbitalMC> {
 
         if(args.length == 0) {
             p.sendMessage("Your permissions are:");
-            for(PermissionAttachment s : pl.getPermissions().listPerms(p)) {
-                s.getPermissions().keySet().forEach(p::sendMessage);
-            }
+            pl.getPermissions().listPerms(p).forEach(s -> s.getPermissions().keySet().forEach(p::sendMessage));
         }
         return true;
     }
