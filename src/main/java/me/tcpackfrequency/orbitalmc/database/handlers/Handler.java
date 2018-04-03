@@ -2,6 +2,7 @@ package me.tcpackfrequency.orbitalmc.database.handlers;
 
 import org.bukkit.configuration.ConfigurationSection;
 
+import java.util.HashSet;
 import java.util.UUID;
 
 public interface Handler {
@@ -10,6 +11,8 @@ public interface Handler {
     void connect(ConfigurationSection cs);
     void saveStats(UUID u);
     void stopDB();
-    void setPermisions(String[] permission, UUID u);
-    String getPermissions(UUID u);
+   // void setPermisions(String[] permission, UUID u);
+    HashSet<String> getPermissions(UUID u);
+    void addPermission(String permission, UUID u);
+    void addPermission(HashSet<String> permissions, UUID u);
 }

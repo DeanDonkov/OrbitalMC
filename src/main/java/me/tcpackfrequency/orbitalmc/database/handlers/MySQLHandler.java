@@ -1,7 +1,6 @@
 package me.tcpackfrequency.orbitalmc.database.handlers;
 
 import com.zaxxer.hikari.HikariDataSource;
-import me.tcpackfrequency.orbitalmc.OrbitalMC;
 import me.tcpackfrequency.orbitalmc.managers.ProfileManager;
 import org.bukkit.configuration.ConfigurationSection;
 
@@ -20,9 +19,7 @@ public class MySQLHandler implements Handler {
 
     private HikariDataSource hikari = new HikariDataSource();
 
-    private OrbitalMC pl;
-
-    private ProfileManager pm;
+    private ProfileManager pm = new ProfileManager();
 
     private Connection connection;
 
@@ -79,7 +76,9 @@ public class MySQLHandler implements Handler {
                 ps.setString(1, String.valueOf(u));
                 ps.setDouble(2, pm.getOrCreateProfile(u).getMoney());
                 ps.setDouble(3, pm.getOrCreateProfile(u).getMoney());
-                // get the permissions.
+                ps = hikari.getConnection().prepareStatement("INSERT INTO Permissions(`UUID`, permissions) VALUES(?, ?)");
+                ps.setString(1, String.valueOf(u));
+                ps.setString(2, pm.getOrCreateProfile(u).getPerms().get(u).toString());
 
                 ps.executeUpdate();
                 System.out.println("Successfully updated profile!");
@@ -101,32 +100,8 @@ public class MySQLHandler implements Handler {
         }
     }
 
-    // TODO: MAKE IT USE SETS.
     @Override
-    public void setPermisions(String[] permissions, UUID u) {
-            StringBuilder perm = new StringBuilder();
-            for(String s : permissions) {
-                perm.append(s+"|");
-            }
-            try {
-               PreparedStatement ps = hikari.getConnection().prepareStatement("UPDATE Permissions SET permissions = ? WHERE player = ?");
-               ps.setString(1, perm.toString());
-               ps.setString(2, String.valueOf(u));
-               ps.executeUpdate();
-               ps.close();
-            } catch (SQLException e) {
-                e.printStackTrace();
-            } finally {
-                try {
-                    this.close(hikari.getConnection(), null, null);
-                } catch (SQLException e) {
-                    e.printStackTrace();
-                }
-            }
-    }
-
-    @Override
-    public String getPermissions(UUID u) {
+    public HashSet<String> getPermissions(UUID u) {
         PreparedStatement ps = null;
         ResultSet rs = null;
             try {
@@ -138,7 +113,7 @@ public class MySQLHandler implements Handler {
                 while(rs.next()) {
                     permissions.add(rs.getString("permissions"));
                 }
-                return null;
+                return permissions;
             } catch (SQLException e){
                 e.printStackTrace();
             } finally {
@@ -149,6 +124,44 @@ public class MySQLHandler implements Handler {
                 }
             }
         return null;
+    }
+
+    @Override
+    public void addPermission(String permission, UUID u) {
+        PreparedStatement ps = null;
+        try {
+            ps = hikari.getConnection().prepareStatement("INSERT into Permissions(`UUID`, permissions) VALUES(?,?)");
+            ps.setString(1, String.valueOf(u));
+            ps.setString(2, permission);
+            ps.executeUpdate();
+        } catch (SQLException e){
+            e.printStackTrace();
+        } finally {
+            try {
+                this.close(hikari.getConnection(), ps, null);
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+    @Override
+    public void addPermission(HashSet<String> permissions, UUID u) {
+        PreparedStatement ps = null;
+        try {
+            ps = hikari.getConnection().prepareStatement("INSERT into Permissions(`UUID`, permissions) VALUES(?,?)");
+            ps.setString(1, String.valueOf(u));
+            ps.setString(2, permissions.toString());
+            ps.executeUpdate();
+        } catch (SQLException e){
+            e.printStackTrace();
+        } finally {
+            try {
+                this.close(hikari.getConnection(), ps, null);
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
     }
 
 

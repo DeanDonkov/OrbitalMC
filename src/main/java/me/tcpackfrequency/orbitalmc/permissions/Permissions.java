@@ -4,9 +4,10 @@ import me.tcpackfrequency.orbitalmc.OrbitalMC;
 import org.bukkit.entity.Player;
 import org.bukkit.permissions.PermissionAttachment;
 
+import java.util.Arrays;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
-import java.util.UUID;
 import java.util.stream.Collectors;
 
 public class Permissions {
@@ -29,9 +30,23 @@ public class Permissions {
         return this;
     }
 
+    public Permissions addPermissions(Player p, String... permissions){
+        HashSet<String> Permissions = new HashSet<>(Arrays.asList(permissions));
+        PermissionAttachment perms = pl.getPm().getOrCreateProfile(p.getUniqueId()).getPerms().get(p.getUniqueId());
+        Permissions.forEach(s -> perms.setPermission(s, true));
+        return this;
+    }
+
     public Permissions removePermission(String permission, Player p){
         PermissionAttachment perms = pl.getPm().getOrCreateProfile(p.getUniqueId()).getPerms().get(p.getUniqueId());
         perms.unsetPermission(permission);
+        return this;
+    }
+
+    public Permissions removePermissions(Player p, String... permissions){
+        HashSet<String> Permissions = new HashSet<>(Arrays.asList(permissions));
+        PermissionAttachment perms = pl.getPm().getOrCreateProfile(p.getUniqueId()).getPerms().get(p.getUniqueId());
+        Permissions.forEach(s -> perms.setPermission(s, false));
         return this;
     }
 
@@ -41,11 +56,4 @@ public class Permissions {
                 .map(Map.Entry::getValue)
                 .collect(Collectors.toList());
     }
-
-    public String[] getPerms(UUID u) {
-        String Perms = pl.getDb().getCurrentDatabaseHandler().getPermissions(u);
-        return Perms.split("\\|");
-    }
-
-
 }

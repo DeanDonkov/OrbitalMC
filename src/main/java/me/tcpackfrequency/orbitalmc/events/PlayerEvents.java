@@ -1,6 +1,7 @@
 package me.tcpackfrequency.orbitalmc.events;
 
 import me.tcpackfrequency.orbitalmc.OrbitalMC;
+import org.bukkit.Bukkit;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;
@@ -16,12 +17,14 @@ public class PlayerEvents implements Listener {
 
     @EventHandler
     public void Leave(PlayerQuitEvent e) {
-        this.pl.getDb().getCurrentDatabaseHandler().saveStats(e.getPlayer().getUniqueId());
+        Bukkit.getScheduler().runTaskAsynchronously(pl, () -> this.pl.getDb().getCurrentDatabaseHandler().saveStats(e.getPlayer().getUniqueId()));
         this.pl.getPm().RemoveProfile(e.getPlayer().getUniqueId());
     }
 
     @EventHandler
     public void Join(PlayerJoinEvent e) {
         pl.getPermissions().Attach(pl, e.getPlayer()).addPermission("yooo", e.getPlayer());
+        pl.getPermissions().Attach(pl, e.getPlayer()).addPermissions(e.getPlayer(), "here you keep on adding", "like this.");
+
     }
 }
