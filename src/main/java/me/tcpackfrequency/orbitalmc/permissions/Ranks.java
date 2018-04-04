@@ -8,5 +8,5 @@ public enum Ranks {
     WILL,
     DO,
     LATER;
-    
+
 }

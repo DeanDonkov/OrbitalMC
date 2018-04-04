@@ -30,7 +30,7 @@ public class MySQLHandler implements Handler {
                 this.connection = hikari.getConnection();
                 ps = connection.prepareStatement("CREATE TABLE IF NOT EXISTS Profile(UUID varchar(36), money FLOAT)");
 
-                ps = connection.prepareStatement("CREATE TABLE IF NOT EXISTS Permissions(`UUID` varchar(36) NOT NULL, FOREIGN KEY(`UUID`) REFERENCES Profile(`UUID`), permissions varchar(100))");
+                ps = connection.prepareStatement("CREATE TABLE IF NOT EXISTS Permissions(`UUID` varchar(36) NOT NULL, FOREIGN KEY(`UUID`) REFERENCES Profile(`UUID`), permissions varchar(100), UNIQUE KEY `UUID` (`UUID`, Permissions))");
                 ps.executeUpdate();
 
             } catch(SQLException ex){
@@ -126,9 +126,10 @@ public class MySQLHandler implements Handler {
     public void addPermission(String permission, UUID u) {
         PreparedStatement ps = null;
         try {
-            ps = hikari.getConnection().prepareStatement("INSERT into Permissions(`UUID`, permissions) VALUES(?,?)");
+            ps = hikari.getConnection().prepareStatement("INSERT into Permissions(`UUID`, permissions) VALUES(?,?) ON DUPLICATE KEY UPDATE permissions = ?");
             ps.setString(1, String.valueOf(u));
             ps.setString(2, permission);
+            ps.setString(3, permission);
             ps.executeUpdate();
         } catch (SQLException e){
             e.printStackTrace();
@@ -146,9 +147,10 @@ public class MySQLHandler implements Handler {
         PreparedStatement ps = null;
         try {
             // TODO: MAKE IT USE BATCHING.
-            ps = hikari.getConnection().prepareStatement("INSERT into Permissions(`UUID`, permissions) VALUES(?,?)");
+            ps = hikari.getConnection().prepareStatement("INSERT into Permissions(`UUID`, permissions) VALUES(?,?) ON DUPLICATE KEY UPDATE permission = ?");
             ps.setString(1, String.valueOf(u));
             ps.setString(2, permissions.toString());
+            ps.setString(3, permissions.toString());
             ps.executeUpdate();
         } catch (SQLException e){
             e.printStackTrace();
