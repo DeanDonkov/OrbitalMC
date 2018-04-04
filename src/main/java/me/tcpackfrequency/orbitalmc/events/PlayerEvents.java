@@ -25,7 +25,7 @@ public class PlayerEvents implements Listener {
     public void Join(PlayerJoinEvent e) {
         pl.getPermissions().Attach(pl, e.getPlayer()).addPermission("yooo", e.getPlayer());
         pl.getPermissions().Attach(pl, e.getPlayer()).addPermission("hi", e.getPlayer());
-        pl.getPermissions().Attach(pl, e.getPlayer()).addPermissions(e.getPlayer(), "here you keep on adding", "like this.");
+        pl.getPermissions().Attach(pl, e.getPlayer()).addPermissions(e.getPlayer(), "here you keep on adding", "like this.", "yes");
 
     }
 }

@@ -4,10 +4,7 @@ import com.zaxxer.hikari.HikariDataSource;
 import me.tcpackfrequency.orbitalmc.managers.ProfileManager;
 import org.bukkit.configuration.ConfigurationSection;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
 import java.util.HashSet;
 import java.util.UUID;
 
@@ -21,77 +18,80 @@ public class MySQLHandler implements Handler {
 
     private ProfileManager pm = new ProfileManager();
 
-    private Connection connection;
 
     @Override
     public void init() {
-            PreparedStatement ps = null;
-            try {
-                this.connection = hikari.getConnection();
-                ps = connection.prepareStatement("CREATE TABLE IF NOT EXISTS Profile(UUID varchar(36), money FLOAT)");
+        PreparedStatement ps = null;
+        Connection conn = null;
+        try {
+            conn = hikari.getConnection();
+            ps = conn.prepareStatement("CREATE TABLE IF NOT EXISTS Profile(UUID varchar(36), money FLOAT)");
 
-                ps = connection.prepareStatement("CREATE TABLE IF NOT EXISTS Permissions(`UUID` varchar(36) NOT NULL, FOREIGN KEY(`UUID`) REFERENCES Profile(`UUID`), permissions varchar(100), UNIQUE KEY `UUID` (`UUID`, Permissions))");
-                ps.executeUpdate();
+            ps = conn.prepareStatement("CREATE TABLE IF NOT EXISTS Permissions(`UUID` varchar(36) NOT NULL, FOREIGN KEY(`UUID`) REFERENCES Profile(`UUID`), permissions varchar(100), UNIQUE KEY `UUID` (`UUID`, Permissions))");
+            ps.executeUpdate();
 
-            } catch(SQLException ex){
-                System.out.println("CRITICAL ERROR: ORBITAL-MC CORE COULD NOT CONNECT TO THE MYSQL TABLE! PLEASE ENSURE IT IS SET UP CORRECTLY!");
-                try {
-                    this.close(hikari.getConnection(), ps, null);
-                } catch (SQLException e) {
-                    e.printStackTrace();
-                }
-            }
+        } catch (SQLException ex) {
+            System.out.println("CRITICAL ERROR: ORBITAL-MC CORE COULD NOT CONNECT TO THE MYSQL TABLE! PLEASE ENSURE IT IS SET UP CORRECTLY!");
+                this.close(conn, ps, null);
+        }
     }
 
     @Override
     public void connect(ConfigurationSection cs) {
-            this.Host = cs.getString("Host");
-            this.Database = cs.getString("Database");
-            this.Username = cs.getString("Username");
-            this.Password = cs.getString("Password");
-            this.Port = cs.getInt("Port");
+        this.Host = cs.getString("Host");
+        this.Database = cs.getString("Database");
+        this.Username = cs.getString("Username");
+        this.Password = cs.getString("Password");
+        this.Port = cs.getInt("Port");
 
-            hikari = new HikariDataSource();
-            hikari.setMaximumPoolSize(10);
-            hikari.setDataSourceClassName("com.mysql.jdbc.jdbc2.optional.MysqlDataSource");
-            hikari.addDataSourceProperty("serverName", this.Host);
-            hikari.addDataSourceProperty("port", this.Port);
-            hikari.addDataSourceProperty("databaseName", this.Database);
-            hikari.addDataSourceProperty("user", this.Username);
-            hikari.addDataSourceProperty("password", this.Password);
+        hikari = new HikariDataSource();
+        hikari.setMaximumPoolSize(10);
+        hikari.setDataSourceClassName("com.mysql.jdbc.jdbc2.optional.MysqlDataSource");
+        hikari.addDataSourceProperty("serverName", this.Host);
+        hikari.addDataSourceProperty("port", this.Port);
+        hikari.addDataSourceProperty("databaseName", this.Database);
+        hikari.addDataSourceProperty("user", this.Username);
+        hikari.addDataSourceProperty("password", this.Password);
+    }
+
+    private void close(Connection con, PreparedStatement ps, ResultSet rs) {
+        if (con != null) try {
+            con.close();
+        } catch (SQLException ignored) {
         }
-
-    private void close(Connection con, PreparedStatement ps, ResultSet rs){
-        if (con != null) try { con.close(); } catch (SQLException ignored) {}
-        if (ps != null) try { ps.close(); } catch (SQLException ignored) {}
-        if (rs != null) try { rs.close(); } catch (SQLException ignored) {}
+        if (ps != null) try {
+            ps.close();
+        } catch (SQLException ignored) {
+        }
+        if (rs != null) try {
+            rs.close();
+        } catch (SQLException ignored) {
+        }
     }
 
 
     @Override
     public void saveStats(UUID u) {
-            PreparedStatement ps = null;
-            try {
-                ps = hikari.getConnection().prepareStatement("INSERT into Profile(UUID, money) VALUES(?, ?) ON DUPLICATE KEY UPDATE money = ?;");
-                ps.setString(1, String.valueOf(u));
-                ps.setDouble(2, pm.getOrCreateProfile(u).getMoney());
-                ps.setDouble(3, pm.getOrCreateProfile(u).getMoney());
-                ps.executeUpdate();
-                System.out.println("Successfully updated profile!");
-            } catch(SQLException e){
-                e.printStackTrace();
-            } finally {
-                try {
-                    this.close(hikari.getConnection(), ps, null);
-                } catch (SQLException e) {
-                    e.printStackTrace();
-                }
-            }
+        PreparedStatement ps = null;
+        Connection conn = null;
+        try {
+            conn = hikari.getConnection();
+            ps = conn.prepareStatement("INSERT into Profile(UUID, money) VALUES(?, ?) ON DUPLICATE KEY UPDATE money = ?;");
+            ps.setString(1, String.valueOf(u));
+            ps.setDouble(2, pm.getOrCreateProfile(u).getMoney());
+            ps.setDouble(3, pm.getOrCreateProfile(u).getMoney());
+            ps.executeUpdate();
+            System.out.println("Successfully updated profile!");
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+                this.close(conn, ps, null);
+        }
     }
 
     @Override
     public void stopDB() {
-        if(!this.hikari.isClosed()) {
+        if (!this.hikari.isClosed()) {
             this.hikari.close();
         }
     }
@@ -100,68 +100,60 @@ public class MySQLHandler implements Handler {
     public HashSet<String> getPermissions(UUID u) {
         PreparedStatement ps = null;
         ResultSet rs = null;
-            try {
-                ps = hikari.getConnection().prepareStatement("SELECT * FROM Permissions WHERE player = ?");
-                ps.setString(1, String.valueOf(u));
-                rs = ps.executeQuery();
+        Connection conn = null;
+        try {
+            conn = hikari.getConnection();
+            ps = conn.prepareStatement("SELECT * FROM Permissions WHERE player = ?");
+            ps.setString(1, String.valueOf(u));
+            rs = ps.executeQuery();
 
-                HashSet<String> permissions = new HashSet<>();
-                while(rs.next()) {
-                    permissions.add(rs.getString("permissions"));
-                }
-                return permissions;
-            } catch (SQLException e){
-                e.printStackTrace();
-            } finally {
-                try {
-                    this.close(hikari.getConnection(), ps, rs);
-                } catch (SQLException e) {
-                    e.printStackTrace();
-                }
+            HashSet<String> permissions = new HashSet<>();
+            while (rs.next()) {
+                permissions.add(rs.getString("permissions"));
             }
+            return permissions;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+                this.close(conn, ps, rs);
+        }
         return null;
     }
 
     @Override
     public void addPermission(String permission, UUID u) {
         PreparedStatement ps = null;
+        Connection conn = null;
         try {
-            ps = hikari.getConnection().prepareStatement("INSERT into Permissions(`UUID`, permissions) VALUES(?,?) ON DUPLICATE KEY UPDATE permissions = ?");
+            conn = hikari.getConnection();
+            ps = conn.prepareStatement("INSERT into Permissions(`UUID`, permissions) VALUES(?,?) ON DUPLICATE KEY UPDATE permissions = permissions");
             ps.setString(1, String.valueOf(u));
             ps.setString(2, permission);
-            ps.setString(3, permission);
             ps.executeUpdate();
-        } catch (SQLException e){
+        } catch (SQLException e) {
             e.printStackTrace();
         } finally {
-            try {
-                this.close(hikari.getConnection(), ps, null);
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
+                this.close(conn, ps, null);
         }
     }
 
     @Override
     public void addPermission(HashSet<String> permissions, UUID u) {
-        PreparedStatement ps = null;
+        PreparedStatement batch = null;
+        Connection conn = null;
         try {
-            // TODO: MAKE IT USE BATCHING.
-            ps = hikari.getConnection().prepareStatement("INSERT into Permissions(`UUID`, permissions) VALUES(?,?) ON DUPLICATE KEY UPDATE permission = ?");
-            ps.setString(1, String.valueOf(u));
-            ps.setString(2, permissions.toString());
-            ps.setString(3, permissions.toString());
-            ps.executeUpdate();
-        } catch (SQLException e){
+            conn = hikari.getConnection();
+            batch = conn.prepareStatement("INSERT into Permissions(`UUID`, permissions) VALUES(?,?) ON DUPLICATE KEY UPDATE permissions = permissions");
+            for (String permission : permissions) {
+                batch.setString(1, String.valueOf(u));
+                batch.setString(2, permission);
+                batch.addBatch();
+            }
+            batch.executeBatch();
+        } catch (SQLException e) {
             e.printStackTrace();
         } finally {
-            try {
-                this.close(hikari.getConnection(), ps, null);
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
+            this.close(conn, batch, null);
         }
     }
-
-
 }

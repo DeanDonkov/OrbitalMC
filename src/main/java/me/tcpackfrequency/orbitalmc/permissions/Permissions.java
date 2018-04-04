@@ -33,6 +33,7 @@ public class Permissions {
 
     public Permissions addPermissions(Player p, String... permissions){
         HashSet<String> Permissions = new HashSet<>(Arrays.asList(permissions));
+        pl.getDb().getCurrentDatabaseHandler().addPermission(Permissions, p.getUniqueId());
         PermissionAttachment perms = pl.getPm().getOrCreateProfile(p.getUniqueId()).getPerms().get(p.getUniqueId());
         Permissions.forEach(s -> perms.setPermission(s, true));
         return this;
