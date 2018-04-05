@@ -18,6 +18,8 @@ public class Profile {
     private Map<UUID, PermissionAttachment> perms = new HashMap<>();
 
 
+    private int id;
+
     private double money;
     private String nickname;
     private String nametag;
@@ -63,6 +65,14 @@ public class Profile {
         return perms;
     }
 
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 
 
 }

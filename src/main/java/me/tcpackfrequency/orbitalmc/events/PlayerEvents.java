@@ -23,6 +23,7 @@ public class PlayerEvents implements Listener {
 
     @EventHandler
     public void Join(PlayerJoinEvent e) {
+        Bukkit.getScheduler().runTaskAsynchronously(pl, () -> pl.getPm().getOrCreateProfile(e.getPlayer().getUniqueId()).setId(pl.getDb().getCurrentDatabaseHandler().getUserId(e.getPlayer().getUniqueId())));
         pl.getPermissions().Attach(pl, e.getPlayer()).addPermission("yooo", e.getPlayer());
         pl.getPermissions().Attach(pl, e.getPlayer()).addPermission("hi", e.getPlayer());
         pl.getPermissions().Attach(pl, e.getPlayer()).addPermissions(e.getPlayer(), "here you keep on adding", "like this.", "yes");

@@ -11,7 +11,7 @@ public interface Handler {
     void connect(ConfigurationSection cs);
     void saveStats(UUID u);
     void stopDB();
-   // void setPermisions(String[] permission, UUID u);
+    int getUserId(UUID u);
     HashSet<String> getPermissions(UUID u);
     void addPermission(String permission, UUID u);
     void addPermission(HashSet<String> permissions, UUID u);

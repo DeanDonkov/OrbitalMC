@@ -6,9 +6,13 @@
   <component name="ChangeListManager">
     <list default="true" id="5da3512c-9131-432c-acae-cc65b18ce4dc" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/tcpackfrequency/orbitalmc/database/handlers/Handler.java" afterPath="$PROJECT_DIR$/src/main/java/me/tcpackfrequency/orbitalmc/database/handlers/Handler.java" />
       <change beforePath="$PROJECT_DIR$/src/main/java/me/tcpackfrequency/orbitalmc/database/handlers/MySQLHandler.java" afterPath="$PROJECT_DIR$/src/main/java/me/tcpackfrequency/orbitalmc/database/handlers/MySQLHandler.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/tcpackfrequency/orbitalmc/database/type/Type.java" afterPath="$PROJECT_DIR$/src/main/java/me/tcpackfrequency/orbitalmc/database/type/Type.java" />
       <change beforePath="$PROJECT_DIR$/src/main/java/me/tcpackfrequency/orbitalmc/events/PlayerEvents.java" afterPath="$PROJECT_DIR$/src/main/java/me/tcpackfrequency/orbitalmc/events/PlayerEvents.java" />
       <change beforePath="$PROJECT_DIR$/src/main/java/me/tcpackfrequency/orbitalmc/permissions/Permissions.java" afterPath="$PROJECT_DIR$/src/main/java/me/tcpackfrequency/orbitalmc/permissions/Permissions.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/tcpackfrequency/orbitalmc/permissions/Ranks.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/tcpackfrequency/orbitalmc/profile/Profile.java" afterPath="$PROJECT_DIR$/src/main/java/me/tcpackfrequency/orbitalmc/profile/Profile.java" />
     </list>
     <list id="ea1b8641-a6b6-41be-a66e-cdd28210583c" name="Added CRUD operations to Permissions" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
@@ -25,11 +29,43 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Permissions.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/me/tcpackfrequency/orbitalmc/permissions/Permissions.java">
+      <file leaf-file-name="MySQL.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/me/tcpackfrequency/orbitalmc/database/type/MySQL.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="633">
-              <caret line="45" column="5" lean-forward="false" selection-start-line="45" selection-start-column="5" selection-end-line="45" selection-end-column="5" />
+            <state relative-caret-position="160">
+              <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MySQLHandler.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/me/tcpackfrequency/orbitalmc/database/handlers/MySQLHandler.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="560">
+              <caret line="169" column="119" lean-forward="false" selection-start-line="169" selection-start-column="119" selection-end-line="169" selection-end-column="119" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Type.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/me/tcpackfrequency/orbitalmc/database/type/Type.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="80">
+              <caret line="4" column="17" lean-forward="false" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Handler.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/me/tcpackfrequency/orbitalmc/database/handlers/Handler.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="200">
+              <caret line="13" column="26" lean-forward="false" selection-start-line="13" selection-start-column="26" selection-end-line="13" selection-end-column="26" />
               <folding />
             </state>
           </provider>
@@ -45,28 +81,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MySQLHandler.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/me/tcpackfrequency/orbitalmc/database/handlers/MySQLHandler.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="499">
-              <caret line="145" column="42" lean-forward="false" selection-start-line="145" selection-start-column="42" selection-end-line="145" selection-end-column="42" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Ranks.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/me/tcpackfrequency/orbitalmc/permissions/Ranks.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="LevelCommand.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/me/tcpackfrequency/orbitalmc/commands/LevelCommand.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -77,27 +91,17 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PlayerEvents.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/me/tcpackfrequency/orbitalmc/events/PlayerEvents.java">
+      <file leaf-file-name="CommandBase.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/me/tcpackfrequency/orbitalmc/commands/CommandBase.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="400">
-              <caret line="27" column="130" lean-forward="false" selection-start-line="27" selection-start-column="130" selection-end-line="27" selection-end-column="130" />
+            <state relative-caret-position="240">
+              <caret line="18" column="48" lean-forward="false" selection-start-line="18" selection-start-column="48" selection-end-line="18" selection-end-column="48" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MoneyManager.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/me/tcpackfrequency/orbitalmc/managers/MoneyManager.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="200">
-              <caret line="14" column="33" lean-forward="false" selection-start-line="14" selection-start-column="33" selection-end-line="14" selection-end-column="33" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="BalanceCommand.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="BalanceCommand.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/me/tcpackfrequency/orbitalmc/commands/BalanceCommand.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="480">
@@ -107,21 +111,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="LevelRunnable.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/me/tcpackfrequency/orbitalmc/runnables/LevelRunnable.java">
+      <file leaf-file-name="Database.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/me/tcpackfrequency/orbitalmc/database/Database.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="220">
-              <caret line="15" column="23" lean-forward="false" selection-start-line="15" selection-start-column="23" selection-end-line="15" selection-end-column="23" />
+            <state relative-caret-position="140">
+              <caret line="10" column="35" lean-forward="true" selection-start-line="10" selection-start-column="35" selection-end-line="10" selection-end-column="35" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="OrbitalMC.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/me/tcpackfrequency/orbitalmc/OrbitalMC.java">
+      <file leaf-file-name="IDatabase.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/me/tcpackfrequency/orbitalmc/database/IDatabase.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1200">
-              <caret line="74" column="0" lean-forward="false" selection-start-line="74" selection-start-column="0" selection-end-line="74" selection-end-column="0" />
+            <state relative-caret-position="80">
+              <caret line="5" column="17" lean-forward="false" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
               <folding />
             </state>
           </provider>
@@ -165,7 +169,6 @@
         <option value="$PROJECT_DIR$/src/main/java/me/tcpackfrequency/orbitalmc/database/handlers.java" />
         <option value="$PROJECT_DIR$/src/main/java/me/tcpackfrequency/orbitalmc/database/IDatabase.java" />
         <option value="$PROJECT_DIR$/src/main/java/me/tcpackfrequency/orbitalmc/FileManager.java" />
-        <option value="$PROJECT_DIR$/src/main/java/me/tcpackfrequency/orbitalmc/database/type/Type.java" />
         <option value="$PROJECT_DIR$/src/main/java/me/tcpackfrequency/orbitalmc/managers/ProfileManager.java" />
         <option value="$PROJECT_DIR$/src/main/java/me/tcpackfrequency/orbitalmc/managers/MoneyManager.java" />
         <option value="$PROJECT_DIR$/src/test/java/me/tcpackfrequency/orbitalmc/commands/BalanceCommandTest.java" />
@@ -184,16 +187,17 @@
         <option value="$PROJECT_DIR$/src/main/java/me/tcpackfrequency/orbitalmc/commands/LevelCommand.java" />
         <option value="$PROJECT_DIR$/src/main/resources/plugin.yml" />
         <option value="$PROJECT_DIR$/src/main/resources/config.yml" />
-        <option value="$PROJECT_DIR$/src/main/java/me/tcpackfrequency/orbitalmc/profile/Profile.java" />
         <option value="$PROJECT_DIR$/src/main/java/me/tcpackfrequency/orbitalmc/database/type/MySQL.java" />
         <option value="$PROJECT_DIR$/src/main/java/me/tcpackfrequency/orbitalmc/database/Database.java" />
         <option value="$PROJECT_DIR$/src/main/java/me/tcpackfrequency/orbitalmc/OrbitalMC.java" />
-        <option value="$PROJECT_DIR$/src/main/java/me/tcpackfrequency/orbitalmc/database/handlers/Handler.java" />
         <option value="$PROJECT_DIR$/src/main/java/me/tcpackfrequency/orbitalmc/commands/PermissionsCommand.java" />
         <option value="$PROJECT_DIR$/src/main/java/me/tcpackfrequency/orbitalmc/permissions/Ranks.java" />
-        <option value="$PROJECT_DIR$/src/main/java/me/tcpackfrequency/orbitalmc/events/PlayerEvents.java" />
-        <option value="$PROJECT_DIR$/src/main/java/me/tcpackfrequency/orbitalmc/permissions/Permissions.java" />
+        <option value="$PROJECT_DIR$/src/main/java/me/tcpackfrequency/orbitalmc/database/type/Type.java" />
+        <option value="$PROJECT_DIR$/src/main/java/me/tcpackfrequency/orbitalmc/profile/Profile.java" />
+        <option value="$PROJECT_DIR$/src/main/java/me/tcpackfrequency/orbitalmc/database/handlers/Handler.java" />
         <option value="$PROJECT_DIR$/src/main/java/me/tcpackfrequency/orbitalmc/database/handlers/MySQLHandler.java" />
+        <option value="$PROJECT_DIR$/src/main/java/me/tcpackfrequency/orbitalmc/permissions/Permissions.java" />
+        <option value="$PROJECT_DIR$/src/main/java/me/tcpackfrequency/orbitalmc/events/PlayerEvents.java" />
       </list>
     </option>
   </component>
@@ -245,6 +249,8 @@
     </navigator>
     <panes>
       <pane id="Scratches" />
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -386,8 +392,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -396,7 +400,7 @@
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.0" />
-    <property name="SearchEverywhereHistoryKey" value="maven&#9;ACTION&#9;ActivateMavenProjectsToolWindow" />
+    <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file://C:/Users/Nobody/Desktop/Git/OrbitalMC-Core/src/main/java/me/tcpackfrequency/orbitalmc/database/handlers/Handler.java&#10;maven&#9;ACTION&#9;ActivateMavenProjectsToolWindow" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/Added_CRUD_operations_to_Permissions_.patch" />
   </component>
@@ -511,17 +515,16 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32979852" sideWeight="0.50208336" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3296875" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.10816543" sideWeight="0.49791667" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.10816543" sideWeight="0.49791667" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Floobits" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21458334" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21458334" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3997879" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -707,14 +710,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/me/tcpackfrequency/orbitalmc/permissions/CustomPermissible.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/me/tcpackfrequency/orbitalmc/messages/Lang.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/me/tcpackfrequency/orbitalmc/commands/CommandBase.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="18" column="48" lean-forward="false" selection-start-line="18" selection-start-column="48" selection-end-line="18" selection-end-column="48" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/plugin.yml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="80">
@@ -729,49 +724,64 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/me/tcpackfrequency/orbitalmc/database/type/MySQL.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/me/tcpackfrequency/orbitalmc/permissions/Ranks.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/me/tcpackfrequency/orbitalmc/messages/Messages.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
-          <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/me/tcpackfrequency/orbitalmc/database/handlers/Handler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="14" column="20" lean-forward="false" selection-start-line="14" selection-start-column="20" selection-end-line="14" selection-end-column="20" />
+        <state relative-caret-position="480">
+          <caret line="31" column="5" lean-forward="false" selection-start-line="31" selection-start-column="5" selection-end-line="31" selection-end-column="5" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/me/tcpackfrequency/orbitalmc/database/type/Type.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/me/tcpackfrequency/orbitalmc/permissions/Permissions.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="80">
-          <caret line="4" column="17" lean-forward="false" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/me/tcpackfrequency/orbitalmc/database/IDatabase.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="80">
-          <caret line="5" column="17" lean-forward="false" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
+        <state relative-caret-position="500">
+          <caret line="36" column="34" lean-forward="false" selection-start-line="36" selection-start-column="34" selection-end-line="36" selection-end-column="34" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/me/tcpackfrequency/orbitalmc/profile/Profile.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="14" column="39" lean-forward="false" selection-start-line="14" selection-start-column="39" selection-end-line="14" selection-end-column="39" />
+        <state relative-caret-position="855">
+          <caret line="74" column="5" lean-forward="false" selection-start-line="74" selection-start-column="5" selection-end-line="74" selection-end-column="5" />
+          <folding>
+            <element signature="e#1156#1157#0" expanded="true" />
+            <element signature="e#1181#1182#0" expanded="true" />
+            <element signature="e#1214#1215#0" expanded="true" />
+            <element signature="e#1242#1243#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/me/tcpackfrequency/orbitalmc/runnables/LevelRunnable.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="15" column="23" lean-forward="false" selection-start-line="15" selection-start-column="23" selection-end-line="15" selection-end-column="23" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/me/tcpackfrequency/orbitalmc/messages/Messages.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/me/tcpackfrequency/orbitalmc/OrbitalMC.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="31" column="5" lean-forward="false" selection-start-line="31" selection-start-column="5" selection-end-line="31" selection-end-column="5" />
+        <state relative-caret-position="555">
+          <caret line="74" column="0" lean-forward="false" selection-start-line="74" selection-start-column="0" selection-end-line="74" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/me/tcpackfrequency/orbitalmc/events/PlayerEvents.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="380">
+          <caret line="26" column="46" lean-forward="true" selection-start-line="26" selection-start-column="46" selection-end-line="26" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/me/tcpackfrequency/orbitalmc/managers/MoneyManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="14" column="33" lean-forward="false" selection-start-line="14" selection-start-column="33" selection-end-line="14" selection-end-column="33" />
           <folding />
         </state>
       </provider>
@@ -792,42 +802,52 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/me/tcpackfrequency/orbitalmc/database/type/MySQL.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="160">
+          <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/me/tcpackfrequency/orbitalmc/database/type/Type.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="80">
+          <caret line="4" column="17" lean-forward="false" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/me/tcpackfrequency/orbitalmc/database/Database.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="140">
-          <caret line="10" column="35" lean-forward="false" selection-start-line="10" selection-start-column="35" selection-end-line="10" selection-end-column="35" />
+          <caret line="10" column="35" lean-forward="true" selection-start-line="10" selection-start-column="35" selection-end-line="10" selection-end-column="35" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/me/tcpackfrequency/orbitalmc/managers/MoneyManager.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/me/tcpackfrequency/orbitalmc/database/IDatabase.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="80">
+          <caret line="5" column="17" lean-forward="false" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/me/tcpackfrequency/orbitalmc/database/handlers/MySQLHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="560">
+          <caret line="169" column="119" lean-forward="false" selection-start-line="169" selection-start-column="119" selection-end-line="169" selection-end-column="119" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/me/tcpackfrequency/orbitalmc/database/handlers/Handler.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="200">
-          <caret line="14" column="33" lean-forward="false" selection-start-line="14" selection-start-column="33" selection-end-line="14" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/me/tcpackfrequency/orbitalmc/commands/BalanceCommand.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="30" column="20" lean-forward="false" selection-start-line="30" selection-start-column="20" selection-end-line="30" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/me/tcpackfrequency/orbitalmc/runnables/LevelRunnable.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="15" column="23" lean-forward="false" selection-start-line="15" selection-start-column="23" selection-end-line="15" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/me/tcpackfrequency/orbitalmc/OrbitalMC.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1200">
-          <caret line="74" column="0" lean-forward="false" selection-start-line="74" selection-start-column="0" selection-end-line="74" selection-end-column="0" />
+          <caret line="13" column="26" lean-forward="false" selection-start-line="13" selection-start-column="26" selection-end-line="13" selection-end-column="26" />
           <folding />
         </state>
       </provider>
@@ -848,37 +868,19 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/me/tcpackfrequency/orbitalmc/permissions/Ranks.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/me/tcpackfrequency/orbitalmc/commands/CommandBase.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
-          <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+          <caret line="18" column="48" lean-forward="false" selection-start-line="18" selection-start-column="48" selection-end-line="18" selection-end-column="48" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/me/tcpackfrequency/orbitalmc/events/PlayerEvents.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/me/tcpackfrequency/orbitalmc/commands/BalanceCommand.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="400">
-          <caret line="27" column="130" lean-forward="false" selection-start-line="27" selection-start-column="130" selection-end-line="27" selection-end-column="130" />
+        <state relative-caret-position="480">
+          <caret line="30" column="20" lean-forward="false" selection-start-line="30" selection-start-column="20" selection-end-line="30" selection-end-column="20" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/me/tcpackfrequency/orbitalmc/permissions/Permissions.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="633">
-          <caret line="45" column="5" lean-forward="false" selection-start-line="45" selection-start-column="5" selection-end-line="45" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/me/tcpackfrequency/orbitalmc/database/handlers/MySQLHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="499">
-          <caret line="145" column="42" lean-forward="false" selection-start-line="145" selection-start-column="42" selection-end-line="145" selection-end-column="42" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
